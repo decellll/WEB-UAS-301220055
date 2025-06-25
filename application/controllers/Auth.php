@@ -73,4 +73,39 @@ class Auth extends CI_Controller
         $this->session->sess_destroy();
         redirect('auth');
     }
+
+    /**
+     * Halaman register
+     */
+    public function register()
+    {
+        $this->load->helper('form');
+        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required');
+        $this->form_validation->set_rules('user', 'Username', 'required|is_unique[tb_admin.user]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_admin.email]');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+        $this->form_validation->set_rules('level', 'Level', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('auth/register');
+        } else {
+            $data = [
+                'anggota' => $this->input->post('user'),
+                'user' => $this->input->post('user'),
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'level' => $this->input->post('level'),
+                'nama' => $this->input->post('nama'),
+                'tempat_lahir' => $this->input->post('tempat_lahir'),
+                'tgl_lahir' => $this->input->post('tgl_lahir'),
+                'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+                'alamat' => $this->input->post('alamat'),
+                'telpon' => $this->input->post('telpon'),
+                'email' => $this->input->post('email'),
+                'tgl_bergabung' => date('Y-m-d'),
+                'foto' => null
+            ];
+            $this->Auth_model->registerUser($data);
+            $this->session->set_flashdata('success', 'Registrasi berhasil! Silakan login.');
+            redirect('auth');
+        }
+    }
 }

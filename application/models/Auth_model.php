@@ -12,4 +12,12 @@ class Auth_model extends CI_Model
             ->get('tb_admin')
             ->row_array();
     }
+
+    /**
+     * Register user baru
+     */
+    public function registerUser($data)
+    {
+        return $this->db->insert('tb_admin', $data);
+    }
 }
