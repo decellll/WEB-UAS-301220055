@@ -18,8 +18,10 @@ CREATE TABLE `tb_admin` (
   `foto` VARCHAR(75)
 );
 
+-- Password hash untuk 'admin' (password: admin)
+-- $2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
 INSERT INTO `tb_admin` (`anggota`, `user`, `password`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `telpon`, `email`, `tgl_bergabung`, `foto`) VALUES
-('admin', 'admin', '$2y$10$hashadmin', 'admin', 'Administrator', 'Jakarta', '1990-01-01', 'Laki-laki', 'Jl. Raya', '08123456789', 'admin@ma-alhijrah.sch.id', '2024-06-01', 'admin.jpg');
+('admin', 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'Administrator', 'Jakarta', '1990-01-01', 'Laki-laki', 'Jl. Raya', '08123456789', 'admin@ma-alhijrah.sch.id', '2024-06-01', 'admin.jpg');
 
 -- Tabel: tb_kategori
 CREATE TABLE `tb_kategori` (
