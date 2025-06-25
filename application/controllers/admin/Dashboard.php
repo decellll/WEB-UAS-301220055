@@ -13,6 +13,13 @@ class Dashboard extends CI_Controller
     }
     public function index()
     {
-        $this->load->view('admin/dashboard');
+        $this->load->model('User_model');
+        $this->load->model('Book_model');
+        $this->load->model('Borrowing_model');
+        $data['total_anggota'] = $this->User_model->countAll();
+        $data['total_kategori'] = $this->Book_model->countKategori();
+        $data['total_pinjam'] = $this->Borrowing_model->countPinjam();
+        $data['total_kembali'] = $this->Borrowing_model->countKembali();
+        $this->load->view('admin/dashboard', $data);
     }
 }
