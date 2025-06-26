@@ -100,7 +100,7 @@
             </div>
             <ul class="nav flex-column">
                 <li class="nav-item"><a class="nav-link active" href="#"><i class="fa fa-tachometer-alt mr-2"></i> Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-users mr-2"></i> Data Pengguna</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('admin/users'); ?>"><i class="fa fa-users mr-2"></i> Data Pengguna</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-book mr-2"></i> Data</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-exchange-alt mr-2"></i> Transaksi</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-money-bill mr-2"></i> Denda</a></li>
