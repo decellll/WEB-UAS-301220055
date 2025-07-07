@@ -58,4 +58,12 @@ class Denda extends CI_Controller
         $this->session->set_flashdata('success', 'Denda telah dikonfirmasi lunas!');
         redirect('admin/denda');
     }
+    public function detail($id)
+    {
+        $data['denda'] = $this->Denda_model->getDetailDenda($id);
+        $data['content_view'] = 'admin/denda/detail';
+        $data['title'] = 'Detail Denda - Perpustakaan MA Al-Hijrah';
+        $data['active_menu'] = 'denda';
+        $this->load->view('templates/admin_layout', $data);
+    }
 }

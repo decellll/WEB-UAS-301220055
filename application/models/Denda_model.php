@@ -51,4 +51,14 @@ class Denda_model extends CI_Model
         $this->db->where('id_denda', $id);
         return $this->db->update('tb_denda', ['status' => 'lunas']);
     }
+    public function getDetailDenda($id)
+    {
+        $this->db->select('tb_denda.*, tb_pinjam.anggota_id, tb_pinjam.pinjam_id, tb_pinjam.tgl_pinjam, tb_pinjam.tgl_balik, tb_pinjam.tgl_kembali, tb_buku.title as judul_buku, tb_buku.isbn, tb_buku.penerbit, tb_buku.pengarang, tb_admin.nama as nama_anggota, tb_admin.user as username, tb_admin.email, tb_admin.level');
+        $this->db->from('tb_denda');
+        $this->db->join('tb_pinjam', 'tb_pinjam.pinjam_id = tb_denda.pinjam_id', 'left');
+        $this->db->join('tb_buku', 'tb_buku.buku_id = tb_pinjam.buku_id', 'left');
+        $this->db->join('tb_admin', 'tb_admin.user = tb_pinjam.anggota_id', 'left');
+        $this->db->where('tb_denda.id_denda', $id);
+        return $this->db->get()->row_array();
+    }
 }

@@ -48,7 +48,7 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-info"><i class="fa fa-info-circle"></i> Detail</a>
+                                <a href="<?php echo site_url('admin/denda/detail/' . $d['id_denda']); ?>" class="btn btn-sm btn-info"><i class="fa fa-info-circle"></i> Detail</a>
                                 <?php if (!isset($d['status']) || $d['status'] != 'lunas'): ?>
                                     <a href="<?php echo site_url('admin/denda/confirm/' . $d['id_denda']); ?>" class="btn btn-sm btn-success" onclick="return confirm('Konfirmasi denda sudah dibayar?');"><i class="fa fa-check"></i> Konfirmasi</a>
                                 <?php endif; ?>
