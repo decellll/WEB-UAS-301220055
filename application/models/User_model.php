@@ -42,4 +42,10 @@ class User_model extends CI_Model
         $this->db->where('id_login', $id);
         return $this->db->delete('tb_admin');
     }
+
+    public function getAllByLevel($level)
+    {
+        $this->db->where('level', $level);
+        return $this->db->get('tb_admin')->result_array();
+    }
 }

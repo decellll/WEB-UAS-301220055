@@ -66,8 +66,8 @@
                 <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'dashboard') ? ' active' : ''; ?>" href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-tachometer-alt mr-2"></i> Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'users') ? ' active' : ''; ?>" href="<?php echo site_url('admin/users'); ?>"><i class="fa fa-users mr-2"></i> Data Pengguna</a></li>
                 <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'books') ? ' active' : ''; ?>" href="<?php echo site_url('admin/books'); ?>"><i class="fa fa-book mr-2"></i> Data</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-exchange-alt mr-2"></i> Transaksi</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-money-bill mr-2"></i> Denda</a></li>
+                <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'transaksi') ? ' active' : ''; ?>" href="<?php echo site_url('admin/transaksi'); ?>"><i class="fa fa-exchange-alt mr-2"></i> Transaksi</a></li>
+                <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'denda') ? ' active' : ''; ?>" href="<?php echo site_url('admin/denda'); ?>"><i class="fa fa-money-bill mr-2"></i> Denda</a></li>
             </ul>
         </nav>
         <!-- Main Content -->

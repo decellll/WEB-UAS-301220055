@@ -29,4 +29,17 @@ class Book_model extends CI_Model
         }
         return $this->db->count_all_results('tb_buku');
     }
+
+    public function getAvailable()
+    {
+        $this->db->where('jumlah >', 0);
+        return $this->db->get('tb_buku')->result_array();
+    }
+
+    public function decrementStock($buku_id)
+    {
+        $this->db->set('jumlah', 'jumlah-1', false);
+        $this->db->where('buku_id', $buku_id);
+        $this->db->update('tb_buku');
+    }
 }
