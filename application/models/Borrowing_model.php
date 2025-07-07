@@ -88,4 +88,13 @@ class Borrowing_model extends CI_Model
         $this->db->where('id_pinjam', $id);
         return $this->db->update('tb_pinjam', $data);
     }
+    public function getHistoryByUser($anggota_id)
+    {
+        $this->db->select('tb_pinjam.*, tb_buku.title as judul_buku');
+        $this->db->from('tb_pinjam');
+        $this->db->join('tb_buku', 'tb_buku.buku_id = tb_pinjam.buku_id', 'left');
+        $this->db->where('tb_pinjam.anggota_id', $anggota_id);
+        $this->db->order_by('tb_pinjam.tgl_pinjam', 'DESC');
+        return $this->db->get()->result_array();
+    }
 }

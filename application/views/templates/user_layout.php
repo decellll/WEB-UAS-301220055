@@ -73,9 +73,9 @@
             </div>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'dashboard') ? ' active' : ''; ?>" href="<?php echo site_url('user/dashboard'); ?>"><i class="fa fa-tachometer-alt mr-2"></i> Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-book mr-2"></i> Data Buku</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-history mr-2"></i> Riwayat Pinjam</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user mr-2"></i> Profil</a></li>
+                <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'books') ? ' active' : ''; ?>" href="<?php echo site_url('user/books'); ?>"><i class="fa fa-book mr-2"></i> Data Buku</a></li>
+                <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'borrowing') ? ' active' : ''; ?>" href="<?php echo site_url('user/borrowing'); ?>"><i class="fa fa-history mr-2"></i> Riwayat Pinjam</a></li>
+                <li class="nav-item"><a class="nav-link<?php echo (isset($active_menu) && $active_menu == 'profile') ? ' active' : ''; ?>" href="<?php echo site_url('user/profile'); ?>"><i class="fa fa-user mr-2"></i> Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('auth/logout'); ?>"><i class="fa fa-sign-out-alt mr-2"></i> Logout</a></li>
             </ul>
         </nav>

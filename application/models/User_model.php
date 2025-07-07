@@ -48,4 +48,9 @@ class User_model extends CI_Model
         $this->db->where('level', $level);
         return $this->db->get('tb_admin')->result_array();
     }
+
+    public function getByUsername($username)
+    {
+        return $this->db->get_where('tb_admin', ['user' => $username])->row_array();
+    }
 }
