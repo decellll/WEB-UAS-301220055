@@ -79,4 +79,13 @@ class Borrowing_model extends CI_Model
         $this->db->where('tgl_balik <', $today);
         return $this->db->get('tb_pinjam')->result_array();
     }
+    public function getById($id)
+    {
+        return $this->db->get_where('tb_pinjam', ['id_pinjam' => $id])->row_array();
+    }
+    public function update($id, $data)
+    {
+        $this->db->where('id_pinjam', $id);
+        return $this->db->update('tb_pinjam', $data);
+    }
 }

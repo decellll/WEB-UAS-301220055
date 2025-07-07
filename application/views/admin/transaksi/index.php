@@ -49,6 +49,9 @@
                             <td><?php echo htmlspecialchars($t['tgl_kembali'] ?? '-'); ?></td>
                             <td>
                                 <a href="<?php echo site_url('admin/transaksi/detail/' . $t['id_pinjam']); ?>" class="btn btn-sm btn-info"><i class="fa fa-info-circle"></i> Detail</a>
+                                <?php if ($t['status'] == 'dipinjam'): ?>
+                                    <a href="<?php echo site_url('admin/transaksi/return/' . $t['id_pinjam']); ?>" class="btn btn-sm btn-success" onclick="return confirm('Konfirmasi pengembalian buku?');"><i class="fa fa-undo"></i> Kembalikan</a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

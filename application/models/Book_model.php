@@ -42,4 +42,11 @@ class Book_model extends CI_Model
         $this->db->where('buku_id', $buku_id);
         $this->db->update('tb_buku');
     }
+
+    public function incrementStock($buku_id)
+    {
+        $this->db->set('jumlah', 'jumlah+1', false);
+        $this->db->where('buku_id', $buku_id);
+        $this->db->update('tb_buku');
+    }
 }

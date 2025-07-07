@@ -41,6 +41,14 @@ class Denda_model extends CI_Model
     }
     public function insert($data)
     {
+        if (!isset($data['status'])) {
+            $data['status'] = 'belum lunas';
+        }
         return $this->db->insert('tb_denda', $data);
+    }
+    public function setLunas($id)
+    {
+        $this->db->where('id_denda', $id);
+        return $this->db->update('tb_denda', ['status' => 'lunas']);
     }
 }

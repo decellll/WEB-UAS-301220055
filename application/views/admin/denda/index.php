@@ -25,6 +25,7 @@
                         <th>Nominal Denda</th>
                         <th>Lama (hari)</th>
                         <th>Tgl Denda</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -40,7 +41,17 @@
                             <td><?php echo $d['lama_waktu'] ? $d['lama_waktu'] : '-'; ?></td>
                             <td><?php echo htmlspecialchars($d['tgl_denda'] ?? '-'); ?></td>
                             <td>
+                                <?php if (isset($d['status']) && $d['status'] == 'lunas'): ?>
+                                    <span class="badge badge-success">Lunas</span>
+                                <?php else: ?>
+                                    <span class="badge badge-warning">Belum Lunas</span>
+                                <?php endif; ?>
+                            </td>
+                            <td>
                                 <a href="#" class="btn btn-sm btn-info"><i class="fa fa-info-circle"></i> Detail</a>
+                                <?php if (!isset($d['status']) || $d['status'] != 'lunas'): ?>
+                                    <a href="<?php echo site_url('admin/denda/confirm/' . $d['id_denda']); ?>" class="btn btn-sm btn-success" onclick="return confirm('Konfirmasi denda sudah dibayar?');"><i class="fa fa-check"></i> Konfirmasi</a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

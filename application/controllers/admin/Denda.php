@@ -51,4 +51,11 @@ class Denda extends CI_Controller
         $data['active_menu'] = 'denda';
         $this->load->view('templates/admin_layout', $data);
     }
+    public function confirm($id)
+    {
+        $this->load->model('Denda_model');
+        $this->Denda_model->setLunas($id);
+        $this->session->set_flashdata('success', 'Denda telah dikonfirmasi lunas!');
+        redirect('admin/denda');
+    }
 }

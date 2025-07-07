@@ -72,4 +72,19 @@ class Transaksi extends CI_Controller
             redirect('admin/transaksi');
         }
     }
+    public function return($id)
+    {
+        $this->load->model('Borrowing_model');
+        $this->load->model('Book_model');
+        $trx = $this->Borrowing_model->getById($id);
+        if ($trx && $trx['status'] == 'dipinjam') {
+            $this->Borrowing_model->update($id, [
+                'status' => 'dikembalikan',
+                'tgl_kembali' => date('Y-m-d')
+            ]);
+            $this->Book_model->incrementStock($trx['buku_id']);
+            $this->session->set_flashdata('success', 'Buku berhasil dikembalikan!');
+        }
+        redirect('admin/transaksi');
+    }
 }
