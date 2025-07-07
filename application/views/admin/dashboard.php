@@ -86,85 +86,58 @@
 
 <body>
     <div class="d-flex">
-        <!-- Sidebar -->
-        <nav class="sidebar p-0">
-            <div class="navbar-brand px-3 py-3 mb-2">Perpus MA Al-Hijrah</div>
-            <div class="user-panel d-flex align-items-center mb-3">
-                <div class="image">
-                    <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($this->session->userdata('nama')); ?>&background=0073b7&color=fff" class="img-circle" width="40" alt="User Image">
-                </div>
-                <div class="info ml-2">
-                    <span><?php echo $this->session->userdata('nama'); ?></span><br>
-                    <small><i class="fa fa-circle text-success"></i> Online</small>
-                </div>
-            </div>
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link active" href="#"><i class="fa fa-tachometer-alt mr-2"></i> Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('admin/users'); ?>"><i class="fa fa-users mr-2"></i> Data Pengguna</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-book mr-2"></i> Data</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-exchange-alt mr-2"></i> Transaksi</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-money-bill mr-2"></i> Denda</a></li>
-            </ul>
-        </nav>
+
         <!-- Main Content -->
         <div class="flex-grow-1">
-            <nav class="navbar navbar-expand navbar-light bg-white shadow-sm">
-                <div class="container-fluid">
-                    <span class="navbar-text ml-auto">
-                        Welcome, <b><?php echo $this->session->userdata('nama'); ?></b> | (<?php echo ucfirst($this->session->userdata('level')); ?>)
-                        <a href="<?php echo site_url('auth/logout'); ?>" class="ml-3 btn btn-sm btn-outline-danger">Sign out</a>
-                    </span>
-                </div>
-            </nav>
             <div class="container-fluid mt-4">
                 <h4 class="mb-4">Dashboard <small class="text-muted">Control panel</small></h4>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="stat-box stat-anggota position-relative">
+                        <div class="stat-box stat-anggota position-relative" style="background:#00c0ef; color:#fff; border-radius:8px; padding:24px 16px; margin-bottom:24px;">
                             <div class="d-flex align-items-center">
                                 <div>
                                     <h2><?php echo $total_anggota; ?></h2>
                                     <p>Anggota</p>
                                 </div>
-                                <span class="icon"><i class="fa fa-users"></i></span>
+                                <span class="icon" style="font-size:2.5rem; opacity:0.3; position:absolute; right:16px; top:16px;"><i class="fa fa-users"></i></span>
                             </div>
-                            <a href="#" class="more">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="more" style="color:#fff; text-decoration:underline;">More info <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="stat-box stat-kategori position-relative">
+                        <div class="stat-box stat-kategori position-relative" style="background:#0073b7; color:#fff; border-radius:8px; padding:24px 16px; margin-bottom:24px;">
                             <div class="d-flex align-items-center">
                                 <div>
                                     <h2><?php echo $total_kategori; ?></h2>
                                     <p>Jenis Buku</p>
                                 </div>
-                                <span class="icon"><i class="fa fa-book"></i></span>
+                                <span class="icon" style="font-size:2.5rem; opacity:0.3; position:absolute; right:16px; top:16px;"><i class="fa fa-book"></i></span>
                             </div>
-                            <a href="#" class="more">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="more" style="color:#fff; text-decoration:underline;">More info <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="stat-box stat-pinjam position-relative">
+                        <div class="stat-box stat-pinjam position-relative" style="background:#00a65a; color:#fff; border-radius:8px; padding:24px 16px; margin-bottom:24px;">
                             <div class="d-flex align-items-center">
                                 <div>
                                     <h2><?php echo $total_pinjam; ?></h2>
                                     <p>Pinjam</p>
                                 </div>
-                                <span class="icon"><i class="fa fa-exchange-alt"></i></span>
+                                <span class="icon" style="font-size:2.5rem; opacity:0.3; position:absolute; right:16px; top:16px;"><i class="fa fa-exchange-alt"></i></span>
                             </div>
-                            <a href="#" class="more">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="more" style="color:#fff; text-decoration:underline;">More info <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="stat-box stat-kembali position-relative">
+                        <div class="stat-box stat-kembali position-relative" style="background:#dd4b39; color:#fff; border-radius:8px; padding:24px 16px; margin-bottom:24px;">
                             <div class="d-flex align-items-center">
                                 <div>
                                     <h2><?php echo $total_kembali; ?></h2>
                                     <p>Di Kembalikan</p>
                                 </div>
-                                <span class="icon"><i class="fa fa-undo"></i></span>
+                                <span class="icon" style="font-size:2.5rem; opacity:0.3; position:absolute; right:16px; top:16px;"><i class="fa fa-undo"></i></span>
                             </div>
-                            <a href="#" class="more">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="more" style="color:#fff; text-decoration:underline;">More info <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>

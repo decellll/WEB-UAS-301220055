@@ -20,6 +20,9 @@ class Dashboard extends CI_Controller
         $data['total_kategori'] = $this->Book_model->countKategori();
         $data['total_pinjam'] = $this->Borrowing_model->countPinjam();
         $data['total_kembali'] = $this->Borrowing_model->countKembali();
-        $this->load->view('admin/dashboard', $data);
+        $data['content_view'] = 'admin/dashboard';
+        $data['title'] = 'Dashboard Admin - Perpustakaan MA Al-Hijrah';
+        $data['active_menu'] = 'dashboard';
+        $this->load->view('templates/admin_layout', $data);
     }
 }
